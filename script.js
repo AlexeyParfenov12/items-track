@@ -1,28 +1,17 @@
 let nameItems = document.querySelectorAll('.name_item');
-let image = document.querySelector('.image');
+let previewImage = document.querySelector('.image');
 
 nameItems.forEach(nameItem => {
-
     nameItem.addEventListener('mousemove', function mouseNameItem(e) {
-        image.style.left = e.clientX + 10 +'px';
-        image.style.top = e.clientY - 70 + 'px';
-        image.style.display = 'block';
-        let nameImage = "img/" + nameItem.textContent + ".jpg";
-        image.src = nameImage;
+        previewImage.style.left = e.clientX + 10 + 'px';
+        previewImage.style.top = e.clientY - 70 + 'px';
+        previewImage.style.display = 'block';
+
+        let imageName = 'img/' + nameItem.textContent + '.jpg';
+        previewImage.src = imageName;
     });
 
-    
     nameItem.addEventListener('mouseleave', () => {
-        image.style.display = 'none';
+        previewImage.style.display = 'none';
     });
-
-    nameItem.addEventListener('click', (e) => {
-        
-    })
-
 });
-
-
-
-
-
